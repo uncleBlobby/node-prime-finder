@@ -18,10 +18,15 @@ function appendNewline(prime) {
 }
 
 while(true) {
-    if (i % 2 != 0) {
-        WritePrimeToFile(i);
-        console.log(`${i} is prime.`)
-        
+    let candidate = i;
+    let isPrime = true;
+    for (let j = 2; j < candidate; j++){
+        if (candidate % j == 0){
+            isPrime = false;
+        }
+    }
+    if (isPrime == true) {
+        WritePrimeToFile(candidate)
     }
     i++;
 }
